@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 6rem;
+  background-color: white;
+  box-shadow: 0 5px 3px hsl(0, 0%, 96%);
+}
+
+.header__title {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme__mode {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 2rem 4rem;
+  }
+
+  .header__title {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 1rem 2rem;
+  }
+
+  .header__title {
+    font-size: 1rem;
+  }
+}
