@@ -6,6 +6,7 @@ import Search from "./components/search/Search";
 
 function App() {
   const [countriesData, setCountriesData] = useState([]);
+  const [filteredCountriesData, setFilteredCountriesData] = useState([]);
 
   const url = "https://restcountries.com/v3.1/all";
 
@@ -13,17 +14,21 @@ function App() {
     const response = await fetch(url);
     const countries = await response.json();
     setCountriesData(countries);
+    setFilteredCountriesData(countries);
   }
 
   useEffect(() => {
     fetchCountriesData();
-    console.log(countriesData);
   }, []);
+
   return (
     <div>
       <Header />
-      <Search />
-      <Homepage countriesData={countriesData} />
+      <Search
+        countriesData={countriesData}
+        setFilteredCountriesData={setFilteredCountriesData}
+      />
+      <Homepage filteredCountriesData={filteredCountriesData} />
     </div>
   );
 }

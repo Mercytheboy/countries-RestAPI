@@ -3,11 +3,11 @@ import Country from "../../components/country/Country";
 
 import "./homepage.css";
 
-function Homepage({ countriesData }) {
+function Homepage({ filteredCountriesData }) {
   return (
     <main className="homepage">
-      {countriesData.map(countryData => {
-        const { cca3, name, population, region, capital, flags } = countryData;
+      {filteredCountriesData.map(country => {
+        const { cca3, name, population, region, capital, flags } = country;
         return (
           <Country
             key={cca3}
