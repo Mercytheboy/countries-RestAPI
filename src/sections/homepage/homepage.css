@@ -1,22 +1,22 @@
-.homepage {
+.country-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 4rem;
   align-items: start;
   background: var(--light-mode-bg);
-  padding: 4rem 6rem;
-
+  padding: 2rem 6rem;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1024px) {
-  .homepage {
-    padding: 4rem;
+  .country-grid {
+    padding: 2rem 4rem;
     gap: 3rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .homepage {
+  .country-grid {
     padding: 2rem;
     gap: 2rem;
   }

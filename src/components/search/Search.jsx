@@ -7,9 +7,14 @@ function Search({ countriesData, setFilteredCountriesData }) {
   const [filterByRegion, setFilterByRegion] = useState("");
 
   function handleSearchNationChange(e) {
-    const newSearcNation = e.target.value;
-    setSearchNation(newSearcNation);
-    filterData(newSearcNation, filterByRegion);
+    const newSearchNation = e.target.value;
+    setSearchNation(newSearchNation);
+
+    if (newSearchNation.trim() === "") {
+      setFilteredCountriesData(countriesData);
+    } else {
+      filterData(newSearchNation, filterByRegion);
+    }
   }
 
   function handleRegionChange(e) {
@@ -40,10 +45,11 @@ function Search({ countriesData, setFilteredCountriesData }) {
           placeholder="Search for a country..."
           value={searchNation}
           onChange={handleSearchNationChange}
+          className="search-input"
         />
-        <button>
+        {/* <button className="search-btn">
           <FaSearch />
-        </button>
+        </button> */}
       </form>
 
       <select

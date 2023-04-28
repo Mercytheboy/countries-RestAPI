@@ -1,0 +1,7 @@
+.border__countries {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  border: 2px solid black;
+}

@@ -1,9 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./country.css";
 
 function Country({ key, name, population, region, capital, flags }) {
+  const navigate = useNavigate();
+
   return (
-    <article key={key} className="country">
+    <article
+      key={key}
+      className="country"
+      onClick={() => navigate(`country/${name.official}`)}>
       <img
         src={flags.svg}
         alt={flags.alt}
