@@ -9,11 +9,11 @@ function Homepage({
   filteredCountriesData,
   setFilteredCountriesData,
 }) {
-  useEffect(() => {
-    return () => {
-      setFilteredCountriesData(countriesData);
-    };
-  }, [countriesData]);
+  // useEffect(() => {
+  //   return () => {
+  //     setFilteredCountriesData(countriesData);
+  //   };
+  // }, [countriesData]);
 
   return (
     <section className="homepage__container">
