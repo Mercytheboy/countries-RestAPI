@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Country from "../../components/country/Country";
 import Search from "../../components/search/Search";
 
@@ -9,6 +9,12 @@ function Homepage({
   filteredCountriesData,
   setFilteredCountriesData,
 }) {
+  useEffect(() => {
+    return () => {
+      setFilteredCountriesData(countriesData);
+    };
+  }, [countriesData]);
+
   return (
     <section className="homepage__container">
       <Search

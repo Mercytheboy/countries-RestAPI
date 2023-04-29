@@ -19,8 +19,8 @@ function CountryDetails() {
   }, []);
 
   return (
-    <section>
-      <button onClick={() => navigate(-1)}>
+    <section className="country__details-container">
+      <button className="bact-btn" onClick={() => navigate(-1)}>
         <FaArrowLeft /> <span>Back</span>
       </button>
 
@@ -39,49 +39,51 @@ function CountryDetails() {
           borders,
         } = countryDetails;
         return (
-          <article key={ccn3}>
-            <img src={flags.svg} alt={flags.alt} />
+          <article key={ccn3} className="more-info">
+            <img src={flags.svg} alt={flags.alt} className="country__flag" />
 
-            <div>
+            <div className="country-info">
               <h2>{name.official}</h2>
               <p>
-                Native Name:{" "}
+                <span>Native Name: </span>
                 {Object.values(name.nativeName).map(
                   nativeName => nativeName.common
                 )}
               </p>
               <p>
-                Population: <span>{population}</span>
+                <span>Population:</span>
+                {population}
               </p>
               <p>
-                Region: <span>{region}</span>
+                <span>Region:</span> {region}
               </p>
               <p>
-                Sub Region: <span>{subregion}</span>
+                <span>Sub Region:</span> {subregion}
               </p>
               <p>
-                Capital: <span>{capital}</span>
+                <span>Capital:</span>
+                {capital}
               </p>
               <p>
-                Top Level Domain: <span>{tld}</span>
+                <span>Top level Domain:</span> {tld}
               </p>
               <p>
-                Currencies:{" "}
-                <span>
-                  {Object.values(currencies).map(currency => currency.name)}
-                </span>
+                <span>Currencies: </span>
+                {Object.values(currencies).map(currency => currency.name)}
               </p>
               <p>
-                Languages:{" "}
-                <span>
-                  {Object.values(languages).map(language => language)}
-                </span>
+                <span>Languages: </span>
+                {Object.values(languages).map(language => language)}
               </p>
 
               <p>
-                Border Countries:{" "}
-                {borders.map(border => {
-                  return <span className="border__countries">{border}</span>;
+                <span>Border Countries: </span>
+                {borders?.map(border => {
+                  return (
+                    <span className="border__countries" key={border}>
+                      {border}
+                    </span>
+                  );
                 })}
               </p>
             </div>
