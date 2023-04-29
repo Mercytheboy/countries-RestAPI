@@ -94,7 +94,7 @@ function Homepage() {
             <article
               key={ccn3}
               className="country"
-              onClick={() => navigate(`country/${name.official}`)}>
+              onClick={() => navigate(`country/${name.common}`)}>
               <img
                 src={flags.svg}
                 alt={flags.alt}
