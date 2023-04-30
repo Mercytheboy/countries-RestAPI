@@ -87,6 +87,7 @@ function Homepage() {
             ))}
         </select>
       </section>
+
       <main className="country-grid">
         {filteredCountriesData.map(country => {
           const { ccn3, name, population, region, capital, flags } = country;
