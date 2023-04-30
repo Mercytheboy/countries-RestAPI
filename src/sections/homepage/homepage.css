@@ -37,11 +37,12 @@
   outline: 0;
   border-radius: 0.25rem;
 }
+
 .country-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 4rem;
-  align-items: center;
+  align-items: start;
   background: var(--light-mode-bg);
   padding: 2rem 6rem;
   justify-content: center;
@@ -55,7 +56,6 @@
   border-radius: 0.5rem;
   overflow: hidden;
   cursor: pointer;
-  max-width: 300px;
 }
 
 .country:hover {
