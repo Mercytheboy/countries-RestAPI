@@ -101,8 +101,8 @@ function Homepage() {
                 loading="lazy"
                 className="country__flag"
               />
-              <div className="country__details">
-                <h3>{name.official}</h3>
+              <div className="country__data">
+                <h3>{name.common}</h3>
                 <p>
                   <span>population: </span>
                   {population}

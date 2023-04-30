@@ -10,7 +10,9 @@ function CountryDetails() {
 
   useEffect(() => {
     async function fetchCountryData() {
-      const response = await fetch(`https://restcountries.com/v3.1/name/${name}
+      const response =
+        await fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true
+
 `);
       const countryData = await response.json();
       setCountry(countryData);
@@ -39,53 +41,61 @@ function CountryDetails() {
           borders,
         } = countryDetails;
         return (
-          <article key={ccn3} className="more-info">
+          <article key={ccn3} className="country__details">
             <img src={flags.svg} alt={flags.alt} className="country__flag" />
 
-            <div className="country-info">
+            <div className="country__details-info">
               <h2>{name.official}</h2>
-              <p>
-                <span>Native Name: </span>
-                {Object.values(name.nativeName).map(
-                  nativeName => nativeName.common
-                )}
-              </p>
-              <p>
-                <span>Population:</span>
-                {population}
-              </p>
-              <p>
-                <span>Region:</span> {region}
-              </p>
-              <p>
-                <span>Sub Region:</span> {subregion}
-              </p>
-              <p>
-                <span>Capital:</span>
-                {capital}
-              </p>
-              <p>
-                <span>Top level Domain:</span> {tld}
-              </p>
-              <p>
-                <span>Currencies: </span>
-                {Object.values(currencies).map(currency => currency.name)}
-              </p>
-              <p>
-                <span>Languages: </span>
-                {Object.values(languages).map(language => language)}
-              </p>
+              <div>
+                <p>
+                  <span>Native Name: </span>
+                  {Object.values(name.nativeName).map(
+                    nativeName => nativeName.common
+                  )}
+                </p>
+                <p>
+                  <span>Population: </span>
+                  {population}
+                </p>
+                <p>
+                  <span>Region: </span> {region}
+                </p>
+                <p>
+                  <span>Sub Region: </span> {subregion}
+                </p>
+                <p>
+                  <span>Capital: </span>
+                  {capital}
+                </p>
+              </div>
+              <div>
+                <p>
+                  <span>Top level Domain: </span> {tld}
+                </p>
+                <p>
+                  <span>Currencies: </span>
+                  {Object.values(currencies).map(currency => currency.name)}
+                </p>
+                <p>
+                  <span>Languages: </span>
+                  {Object.values(languages).map(language => language)}
+                </p>
+              </div>
 
-              <p>
-                <span>Border Countries: </span>
-                {borders?.map(border => {
-                  return (
-                    <span className="border__countries" key={border}>
-                      {border}
-                    </span>
-                  );
-                })}
-              </p>
+              {borders && (
+                <div className="borders">
+                  <p>
+                    <span>Border Countries: </span>
+                    {borders?.map(border => {
+                      return (
+                        <span className="border__countries" key={border}>
+                          {border}
+                        </span>
+                      );
+                    })}
+                  </p>
+                </div>
+              )}
             </div>
           </article>
         );

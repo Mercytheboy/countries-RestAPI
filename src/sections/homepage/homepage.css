@@ -83,17 +83,17 @@
   width: 100%;
 }
 
-.country__details {
+.country__data {
   padding: 1rem;
 }
 
-.country__details h3 {
+.country__data h3 {
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
   font-weight: 800;
 }
 
-.country__details span {
+.country__data span {
   font-weight: 600;
 }
 
