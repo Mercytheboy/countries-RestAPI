@@ -45,7 +45,7 @@ function CountryDetails() {
             <img src={flags.svg} alt={flags.alt} className="country__flag" />
 
             <div className="country__details-info">
-              <h2>{name.official}</h2>
+              <h2>{name.common}</h2>
               <div>
                 <p>
                   <span>Native Name: </span>
